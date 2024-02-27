@@ -3,7 +3,7 @@
 
 # defaults
 SRC_DIR = $(PWD)/../../src
-PROJECT_SOURCES = project.v tdc_ifc_pkg.sv tdc_wrapper_pkg.sv tt_tdc_pg_tdl.sv
+PROJECT_SOURCES = tdc_wrapper_pkg.sv tt_tdc_pg_tdl.sv
 
 ifneq ($(GATES),yes)
 
@@ -33,7 +33,7 @@ endif
 VERILOG_SOURCES += $(PWD)/tb_top.sv $(SRC_DIR)/tdc_ifc_pkg.sv
 
 compile:
-	vcs -full64 -timescale=1ns/1ns $(VERILOG_SOURCES) -LDFLAGS -Wl,--no-as-needed
+	vcs -sverilog -full64 -timescale=1ns/1ns $(VERILOG_SOURCES) -LDFLAGS -Wl,--no-as-needed
 
 sim: compile
 	./simv

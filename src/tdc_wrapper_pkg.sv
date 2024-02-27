@@ -17,9 +17,9 @@ package tdc_wrapper_pkg;
   } ctrl_delay_line_t;
 
   typedef struct{
-    ctrl_pulse_src_t ctl_pls_src,
-    ctrl_tog_t ctl_tog,
-    ctrl_delay_line_t ctl_delay_line
+    ctrl_pulse_src_t ctl_pls_src;
+    ctrl_tog_t ctl_tog;
+    ctrl_delay_line_t ctl_delay_line;
   } ctrl_csr;
 
   function void print_ctl_csr_status(

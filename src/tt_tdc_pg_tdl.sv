@@ -48,7 +48,7 @@ always_comb
 generate
 	case(dl_type)
 		// TODO: Check synthesis
-		"ADD":
+		"ADD": begin
 			(* keep *) wire [dl_len-1:0] a, b;
 			(* keep *) wire [  dl_len:0] c;
 			for(i=0; i<dl_len; i+=1) begin : gen_dl
@@ -58,12 +58,13 @@ generate
 					.cin(c[i]),
 					.s(dl_out[i]),
 					.cout(c[i+1])
-				)
+				);
 			end
 			always_comb c[0] = mux_bypass;
 			always_comb    a = {dl_len{1'b1}};
 			always_comb    b = {dl_len{1'b1}};
-		endcase
+			end
+	endcase
 endgenerate
 
 endmodule
