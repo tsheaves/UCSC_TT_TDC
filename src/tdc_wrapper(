@@ -1,8 +1,0 @@
-module tdc_wrapper(
-	# TODO - move to SPI
-
-);
-	import tdc_wrapper_pkg::*;
-	ctrl_csr ctl_csr;
-
-endmodule
