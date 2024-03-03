@@ -1,0 +1,26 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "compress_8_4": [
+        "compress_8_4",
+        "S2I6d",
+        "module",
+        2
+    ],
+    "tb_pop_count": [
+        "tb_pop_count",
+        "Jbe1w",
+        "module",
+        3
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}

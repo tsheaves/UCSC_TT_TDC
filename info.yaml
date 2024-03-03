@@ -1,42 +1,47 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
-  language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  title:        "UC Santa Cruz, TDC"                                    # Project title
+  author:       "Tyler Sheaves"                                         # Your name
+  discord:      "tsheaves"                                              # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "Construct a SPI-controlled TDC."                       # One line description of what your project does
+  language:     "SystemVerilog"                                         # other examples include SystemVerilog, Amaranth, VHDL, etc
+  clock_hz:      66MHz                                                  # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  tiles: "1x1"                                                          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_hsc_tdc"
   
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
-    - "project.v"
-
+    - "tt_um_hsc_tdc.sv"
+    - "/tdc/tdc_top.sv"
+    - "/tdc/tdc_pg.sv"
+    - "/tdc/tdc_pkg.sv"
+    - "/tdc/tdc_delay_line.sv"
+    - "/tdc/vmacros/rca.v"
+    - "/tdc/pop_count/pop_count_simple.sv"
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
+  ui[0]: "Lanuch clock"
+  ui[1]: "Capture clock"
+  ui[2]: "pg_src"
+  ui[3]: "pg_bypass"
+  ui[4]: "pg_in"
+  ui[5]: "pg_tog"
   ui[6]: ""
   ui[7]: ""
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
+  uo[0]: "hw[0]"
+  uo[1]: "hw[1]"
+  uo[2]: "hw[2]"
+  uo[3]: "hw[3]"
+  uo[4]: "hw[4]"
+  uo[5]: "hw[5]"
+  uo[6]: "hw[6]"
   uo[7]: ""
 
   # Bidirectional pins
